@@ -1,0 +1,62 @@
+body{
+    background-color: rgb(5, 52, 102);
+    background-size: cover;
+}
+
+.container {
+    width: 360px;
+    max-width: 700px;
+    height: 60vh;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    margin-top: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+}
+
+h1 {
+    height: 100px;  
+    text-align: center; 
+
+}
+
+label {
+    padding: 20px; 
+    position: relative;
+    bottom: 5px;
+    display: flex;
+    height: 15px;
+}
+
+input {
+    position: relative;
+    bottom: 10px;
+    margin: 0px;
+    height: 4vh;
+    width: 90%;
+    border-radius: 4px;
+    border-color: black;
+    margin-left: 20px;
+
+}
+
+#button {
+    position: relative;
+    cursor: pointer;
+    border: none;
+    margin: 20px ;
+    border: none;
+    color: rgb(5, 52, 102);
+    background-color: aqua;
+    align-content: center;
+}
+
+p {
+    margin: 0px;
+    margin-left: 20px;
+}
+
+.text {
+    margin: 20px;
+}

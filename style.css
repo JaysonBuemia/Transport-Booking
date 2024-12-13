@@ -1,0 +1,288 @@
+header{
+    font-family: "Ubuntu", sans-serif;
+    list-style-type: none;
+    align-items: center;
+    padding: 2px -15px -15px;
+    top: 0; left: 0; right: 0;
+    background-color: rgb(220, 216, 207);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    justify-content: space-between;
+    z-index: 1000;   
+    position: fixed; 
+    margin-top: -16px;  
+}
+
+a{
+    color: darkred;
+    text-decoration: none;
+}
+
+body{
+    background-color: white;
+    overflow-x: hidden;
+    overflow-y: auto; 
+    border: none;
+    flex-direction: column;
+}
+
+#hero{   
+    background-image: url("image/logo-color.png");
+    position: relative;
+    background-size: 1000px 500px;
+    margin-left: 15%;
+    background-repeat: no-repeat;
+    background-position: 40px;
+    border-radius: 3px;
+    justify-content: center;
+    width: 70%;
+    border: 2px solid rgb(196, 180, 147);
+    margin-top: 50px;
+}
+
+.home{   
+    width: 35vw;
+    position: relative;
+    height: 0;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 11px;
+}
+
+h3{
+    top: 270px;
+}
+
+.home{
+    margin-top: 30%;
+}
+button{
+    width: 150px;
+    height: 35px;
+    border-radius: 3px;
+    border: 4px hotpink;
+    cursor: pointer;
+    align-items: center;
+    background-color: rgb(249, 210, 160);
+    box-shadow: 0 0 2px 2px rgba(0, 0.2, 0, 0.2);
+    font-family: Tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: darkred;
+    font-weight: bold;
+    position: relative;
+}
+
+.content {
+    flex: 1; 
+    padding: 20px;
+}
+
+.logo img {
+    float: left; 
+    width: 25px; 
+    height: auto; 
+    margin-right: 10px;
+    display: flex;
+}
+
+.logo h1 {
+    overflow: hidden;
+    margin: 0;
+    
+}
+
+#footer {                   
+    position: relative;
+    bottom: 0;
+    background-color: rgb(196, 180, 147);
+    text-align: right;
+    padding: 10px 15px 15px;
+    margin-left: -15px;
+    margin-bottom: -15px;
+    padding: 20px;
+}
+
+#footer button {
+    width: 150px;
+    height: 35px;
+    border-radius: 3px;
+    border: 4px hotpink;
+    cursor: pointer;
+    background-color: rgb(249, 210, 160);
+    box-shadow: 0 0 2px 2px rgba(0, 0.2, 0, 0.2);
+    font-family: Tahoma, sans-serif;
+    font-size: 15px;
+    color: darkred;
+    font-weight: bold;
+    margin-right: 245px;
+}
+
+#About button{
+width: 150px;
+height: 35px;
+border-radius: 3px;
+border: 4px hotpink;
+cursor: pointer;
+align-items: center;
+background-color: rgb(249, 210, 160);
+box-shadow: 0 0 2px 2px rgba(0, 0.2, 0, 0.2);
+font-family: Tahoma, sans-serif;
+font-weight: 400;
+font-size: 15px;
+color: darkred;
+font-weight: bold;
+margin-left: 360px;
+margin-top: 10px;
+}
+
+#About button:hover{
+    box-shadow: none;
+    border: 5em rgb(196, 180, 147);
+    transition: 0.4s ease;
+}
+
+h3{
+    position: relative;
+    width: 8%;
+    margin-left: 70px;
+    left: 10%;
+    top: 290px;
+    font-size: 15px;
+    color: hsl(0, 71%, 78%);
+    border: 2px solid grey;
+    text-align: center;
+}
+
+.about-sec{  
+    display: flex;   
+    flex-direction: column;   
+    top: 800px;
+    align-items: right 50%;
+    position: absolute;
+    left: 50%;
+    padding: 0 100px;
+    font-family:  "Fira Sans", sans-serif;
+    padding-left: 0px;  
+}
+
+#footer button:hover{
+    position: relative;
+    box-shadow: none;
+    border: 5em rgb(196, 180, 147);
+    transition: 0.4s ease;
+}
+
+#footer p {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: italic;
+    font-weight: bold;
+}
+
+#about-pic{
+    display: flex;
+    position: absolute;
+    margin-top: 300px;
+    padding-right: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+#About button{
+    width: 150px;
+    height: 35px;
+    border-radius: 3px;
+    border: 4px hotpink;
+    cursor: pointer;
+    align-items: center;
+    background-color: rgb(249, 210, 160);
+    box-shadow: 0 0 2px 2px rgba(0, 0.2, 0, 0.2);
+    font-family: Tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: darkred;
+    font-weight: bold;
+    margin-left: 310px;
+    margin-top: 10px;
+}
+
+#About button:hover{
+    box-shadow: none;
+    border: 5em rgb(196, 180, 147);
+    transition: 0.4s ease;
+}
+
+#hero button{
+    width: 150px;
+    height: 35px;
+    border-radius: 3px;
+    border: 4px hotpink;
+    cursor: pointer;
+    align-items: center;
+    background-color: rgb(249, 210, 160);
+    box-shadow: 0 0 2px 2px rgba(0, 0.2, 0, 0.2);
+    font-family: Tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: darkred;
+    font-weight: bold;
+}
+
+#hero button:hover{
+    box-shadow: none;
+    border: 5em rgb(196, 180, 147);
+    transition: 0.4s ease;
+}
+
+header .logo{
+    font-size: 1rem;
+    font-weight: bolder;
+    float: left;
+    margin-left: 15px; 
+}
+
+header .logo span{
+    color:darkred;
+}
+
+.navbar a{
+    color: hsl(0, 0%, 100%);
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    transition: 0.4s ease;
+    border-radius: 3px;
+}
+
+.navbar li{
+    float: right;
+    margin-right: 20px;
+    list-style: none;
+}
+
+.navbar a:hover{
+    background-color: hsl(0, 0%, 100%);
+    color: rgb(196, 180, 147);
+}
+
+::-webkit-scrollbar{
+    width: -1em; 
+}
+
+::-webkit-scrollbar-track{
+    background: hsl(0, 0%, 100%);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color:  rgba(121, 1, 103, 0.574);
+    border-radius: 8px;
+}
+
+#About{
+    width: 100%;
+    height: 100%
+}

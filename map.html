@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Transport Booking</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=location_searching" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_drop_down" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+</head>
+    <body>
+        <nav class="navbar">
+   
+            <div class="logo"><img src="images/book.png" alt=""><h1>Transport Booking App</h1>
+
+                <ul> 
+                    <li class="main-item"><a href="#">History</a></li>
+                    <li class="item">
+                        <a class="active" href="#">About</a>
+                   
+                        <ul class="dropdown">             
+                        <li><a href="#">User</a></li>
+                        <li><a href="contact.php">Vlog</a></li>
+                 </ul>
+            </li>
+            </ul>                          
+        </div>
+    </nav> 
+
+
+    <input id="pac-input" type="text" placeholder="Search for a place">
+    <div id="map"></div>
+ 
+     <script async defer
+        src="https://maps.gomaps.pro/maps/api/js?key=AlzaSyX7I9WLL6CnDIt_Y4QgIQ4RqeTlDLSlhBS&libraries=geometry,places&callback=initMap">
+    </script>
+
+<script>
+ 
+    let map;
+    let autocomplete;
+
+    function initMap() {
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 13.120467523539007, lng: 123.74461369015793 }, 
+            zoom: 13
+        });
+
+        const input = document.getElementById('pac-input');
+
+        autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo('bounds', map);
+
+        autocomplete.addListener('place_changed', () => {
+            const place = autocomplete.getPlace();
+            if (!place.geometry) {
+                console.log("No details available for the input: '" + place.name + "'");
+                return;
+            }
+
+            if (place.geometry.viewport) {
+                map.fitBounds(place.geometry.viewport);
+            } else {
+                map.setCenter(place.geometry.location);
+                map.setZoom(13);
+            }
+
+            new google.maps.Marker({
+                position: place.geometry.location,
+                map: map
+            });
+        });
+    }
+</script>
+
+            <hr>
+            <span class="material-symbols-outlined floating-btn" id="location_searching">location_searching
+            </span>
+
+        <footer>
+            <p>copyrights@<a href="">Taysan Transport Booking</a></p>
+        </footer>
+
+    </body>
+</html>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Mona Sans", sans-serif;
+}
+
+.container{
+    width: 130px;
+    height: 100%;
+    background-color: rgb(121, 249, 136);
+    position: relative;
+    border-radius: 0 0 8px 8px;
+    left: 5px;
+}
+
+.item{
+    left: 1090px;
+    color: #000000;
+}
+
+.main-item{
+    left: 1090px;
+}
+
+.main-item a {
+    color:#000000;
+}
+
+ul {
+    list-style-type: none;
+    float: right;
+}
+
+ul li {
+    display: flex;
+    position: relative;
+    display:inline-block;
+    font-size: 20px;
+    text-decoration: #ffffff;
+}
+
+ul li.dropdown{
+    padding: none;
+    position: relative;
+    display: none;
+    z-index: 1;
+}
+
+ul li a.active{
+    background-color:rgb(0, 219, 172);
+}
+
+ul li a {
+    text-decoration: none;
+    font-size: small;
+}
+
+ul li:hover > a {
+    background-color: rgb(0, 219, 172);
+    color: #000000;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: rgb(166, 247, 15);
+    width: 80px;
+    float: none;
+    width: 100%;
+    text-align: center;
+    height: 70px;
+}
+
+ul li:hover .dropdown {
+    display: block;
+    justify-content: flex-start;
+    padding: none;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+}
+
+.dropdown li {
+    display: block;
+    left: 18.5px;
+    align-items: center;
+    text-align: center;
+}
+
+.dropdown li a{
+    height: 35px;
+    width: 55px;
+    color:#000000;
+}
+
+hr {
+    width: 1440px;
+    display: flex;
+    position: relative;
+    font-size: large;
+    left: 40px;
+}
+
+.floating-btn{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: black;
+    font-size: 55px;
+    background-color: rgb(135, 222, 203);
+    box-shadow: 1px 1px 5px 1px rgba(5, 5, 5, 0.25);
+    cursor: pointer;
+    position: fixed;
+    right: 300px;
+    bottom: 120px;
+    background-color: #f4f3eb;
+}
+
+#horizontal-line{
+    width: 1px;
+    height: 500px;
+    border: none;
+}
+
+body {
+    background-color: #ffffff;
+    height: 100%;
+    margin: none;
+    padding: none;
+    position:relative;
+}
+
+.navbar {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem;
+    height: 50px;   
+}
+
+.navbar .logo h1 {
+    margin: 0;
+    font-size: 17px;
+    color: black;
+    justify-content: center;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.sec {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+footer {
+    background-color: rgb(0, 219, 172);
+    color: #000000;
+    text-align: center;
+    height: 180px;
+    padding: 80px;
+    font-weight: bold;
+}
+
+footer a {
+    color: #0a0a0a;
+    text-decoration: none;
+}
+
+.footer p a {
+    text-decoration: none;
+    color: red;
+}
+
+#map {
+    height: 600px;
+    width: 100%;
+    padding: none;
+    margin: 20px auto;
+}
+
+#pac-input {
+    margin-top: 10px;
+    width: 300px;
+    padding: 5px;
+    font-size: 14px;
+    margin-left: 40px;
+}
+</style>
